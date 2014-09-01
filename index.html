@@ -286,7 +286,7 @@
 					<p>Het Challenger Sale gedachtegoed is een goed vertrekpunt om sales professionals bewust te maken van de noodzaak om te veranderen richting een meer kennis gedreven sales professional (knowledge broker). Echter is het advies het model van The Challenger Sale niet een-op-een toe te passen en moet er bij de implementatie rekening worden gehouden met de nieuwe inzichten en valkuilen. Een kennis- en implementatiepartner die dit volledige spectrum beheerst is dus cruciaal voor de kans van slagen.</p>
 				</div>
 				<div>
-					<button class="detailbutton downloadButton no-margin-top">Download Challenger Sale<sup>2.0</sup> artikel</button>
+					<button class="detailbutton downloadButton no-margin-top my_popup_open">Download Challenger Sale<sup>2.0</sup> artikel</button>
 				</div>
 			</div>	
 		</div>
@@ -329,9 +329,31 @@
 			</div>
 		</div>
 
+		<div id="my_popup" class="overlay">
+
+		    <form name="contactform" method="post" action="php/send_form_email.php">
+					<input type="text" name="first-name" placeholder="Voornaam" class="download-input no-margin-left"><br>
+					<input type="text" name="last-name" placeholder="Achternaam" class="download-input no-margin-left"><br>
+					<input type="text" name="company" placeholder="Bedrijf" class="download-input no-margin-left"><br>
+					<input type="text" name="email" placeholder="Email" class="download-input no-margin-left"><br>
+					<input type="text" name="phone" placeholder="Telefoonnummer" class="download-input no-margin-left"><br>
+					<input type="submit" value="Download artikel" class="no-margin-left" class="download-input">
+		</form>
+
+  		</div>
 	</div>
 <script type="text/javascript" src="javascript/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="javascript/smoothscroll.js"></script>
+<script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
 <script type="text/javascript" src="javascript/application.js"></script>
+
+<script>
+    $(document).ready(function() {
+
+      // Initialize the plugin
+      $('#my_popup').popup();
+
+    });
+</script>
 </body>
 </html>
