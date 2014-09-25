@@ -6,7 +6,7 @@ if(isset($_POST['contact'])) {
  
     // EDIT THE 2 LINES BELOW AS REQUIRED
  
-    $email_to = "service@insightyou.com";
+    $email_to = "contact@challengersale.nu";
  
     $email_subject = "Contactformulier Challengersale.nu";
  
@@ -14,7 +14,7 @@ if(isset($_POST['contact'])) {
  
      
  
-    function died($error) {
+    function died() {
  
         // your error code can go here
  
@@ -34,7 +34,7 @@ if(isset($_POST['contact'])) {
  
         !isset($_POST['contact'])) {
  
-        died('Het spijt ons maar er lijkt iets mis te zijn met je aanvraag.');       
+        died();       
  
     }
  
@@ -45,7 +45,7 @@ if(isset($_POST['contact'])) {
     $contact = $_POST['contact']; // required
 
  
-    $email_message = "Formulierdetails onderstaand.\n\n";
+    $email_message = "De volgende persoon ontvangt graag meer informatie over The Challenger Sale2.0:\n\n";
  
      
  

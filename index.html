@@ -57,13 +57,14 @@
 		<div class="slogan item group" id="contact">
 				<div class="subcontainer padding-top no-padding-bottom group mob-padding-bottom">
 					<h2 class="quote">"Wij helpen u aan de kennis en inzichten die nodig zijn om uw sales organisatie succesvol en op een meer strategisch niveau klanten te laten uitdagen."</h2>
-					<p>Neem direct contact met ons op via <span class="orange boldtext"><i class="fa fa-phone"></i> 010 340 30 80</span> of via <span class="orange boldtext"><i class="fa fa-envelope"></i> hallo@challengersale.nu</span>. Anderszijds kunt u onderstaand formulier invullen zodat we binnen 24 uur contact met u kunnen opnemen.</p>
+					<p>Neem direct contact met ons op via <span class="orange boldtext"><i class="fa fa-phone"></i> 010 340 30 80</span> of via <span class="orange boldtext"><i class="fa fa-envelope"></i> contact@challengersale.nu</span>. Anderszijds kunt u onderstaand formulier invullen zodat we binnen 24 uur contact met u kunnen opnemen.</p>
 				</div>
 				<div class="subcontainer group">
 					<form name="contactform" method="post" action="php/send_form_email.php">
-						<input type="text" name="name" placeholder="Voornaam + Achternaam">
-						<input type="text" name="contact" placeholder="Email en/of telefoonnummer">
+						<input type="text" name="name" placeholder="Voornaam + Achternaam*">
+						<input type="text" name="contact" placeholder="Email en/of telefoonnummer*">
 						<input type="submit" value="Neem contact met mij op">
+						<p>* Verplicht veld</p>
 					</form>	
 				</div>
 		</div>
@@ -126,7 +127,7 @@
 					</p>
 					<p class="center">Het Challengers profiel is het meest succesvol in een in toenemende mate complexer wordend verkooptraject. 
 					</p>
-					<button class="detailbutton downloadButton">Download Challenger Sale<sup>2.0</sup> artikel</button>
+					<button class="detailbutton downloadButton my_popup_open">Download Challenger Sale<sup>2.0</sup> artikel</button>
 				</div>
 			</div>
 		</div>
@@ -318,25 +319,27 @@
 		<div class="slogan item group">
 			<div class="subcontainer padding-top no-padding-bottom group mob-padding-bottom">
 				<h2 class="quote">"Wij helpen u aan de kennis en inzichten die nodig zijn om uw sales organisatie succesvol en op een meer strategisch niveau klanten te laten uitdagen."</h2>
-				<p>Wij zijn te bereiken via <span class="orange boldtext"><i class="fa fa-phone"></i> 010 340 30 80</span> of via <span class="orange boldtext"><i class="fa fa-envelope"></i> hallo@challengersale.nu</span>. Of vul onderstaand formulier in zodat we binnen 24 uur contact met u kunnen opnemen.</p>
+				<p>Wij zijn te bereiken via <span class="orange boldtext"><i class="fa fa-phone"></i> 010 340 30 80</span> of via <span class="orange boldtext"><i class="fa fa-envelope"></i> contact@challengersale.nu</span>. Of vul onderstaand formulier in zodat we binnen 24 uur contact met u kunnen opnemen.</p>
 			</div>
 			<div class="subcontainer group">
 				<form name="contactform" method="post" action="php/send_form_email.php">
-					<input type="text" name="name" placeholder="Voornaam + Achternaam">
-					<input type="text" name="contact" placeholder="Email en/of telefoonnummer">
+					<input type="text" name="name" placeholder="Voornaam + Achternaam*">
+					<input type="text" name="contact" placeholder="Email en/of telefoonnummer*">
 					<input type="submit" value="Neem contact met mij op">
+					<p>* Verplicht veld</p>
 				</form>	
 			</div>
 		</div>
 
 		<div id="my_popup" class="overlay">
 
-		    <form name="contactform" method="post" action="php/send_form_email.php">
-					<input type="text" name="first-name" placeholder="Voornaam" class="download-input no-margin-left"><br>
-					<input type="text" name="last-name" placeholder="Achternaam" class="download-input no-margin-left"><br>
-					<input type="text" name="company" placeholder="Bedrijf" class="download-input no-margin-left"><br>
-					<input type="text" name="email" placeholder="Email" class="download-input no-margin-left"><br>
-					<input type="text" name="phone" placeholder="Telefoonnummer" class="download-input no-margin-left"><br>
+		    <form name="downloadform" method="post" action="php/send_downloadform_email.php">
+					<input type="text" name="first-name" placeholder="Voornaam*" class="download-input no-margin-left" data-validation="length" data-validation-length="min1" data-validation-help="Vul uw voornaam in"><br>
+					<input type="text" name="last-name" placeholder="Achternaam*" class="download-input no-margin-left" data-validation="length" data-validation-length="min1" data-validation-help="Vul uw achternaam in"><br>
+					<input type="text" name="company" placeholder="Bedrijf*" class="download-input no-margin-left" data-validation="length" data-validation-length="min1" data-validation-help="Vul uw bedrijfsnaam in"><br>
+					<input type="text" name="email" placeholder="Email*" class="download-input no-margin-left" data-validation="email" data-validation-help="Vul uw email adres in"><br>
+					<input type="text" name="phone" placeholder="Telefoonnummer*" class="download-input no-margin-left" data-validation="length" data-validation-length="min5" data-validation-help="Vul uw telefoonnummer in"><br>
+					<p>* Verplicht veld</p>
 					<input type="submit" value="Download artikel" class="no-margin-left" class="download-input">
 		</form>
 
@@ -344,15 +347,16 @@
 	</div>
 <script type="text/javascript" src="javascript/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="javascript/smoothscroll.js"></script>
-<script src="http://vast-engineering.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
+<script type="text/javascript" src="javascript/jquery.popupoverlay.js"></script>
+<script type="text/javascript" src="javascript/form-validator/jquery.form-validator.min.js"></script>
 <script type="text/javascript" src="javascript/application.js"></script>
 
 <script>
     $(document).ready(function() {
 
-      // Initialize the plugin
-      $('#my_popup').popup();
-
+    	// Initialize the plugin
+    	$('#my_popup').popup();
+		$.validate();
     });
 </script>
 </body>
